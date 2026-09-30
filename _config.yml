@@ -1,7 +1,7 @@
-# Site identity — replace [NAME] with your blog name.
-title: "[NAME]"
+# Site identity
+title: "Un Français à Bruxelles"
 description: "Notes, essays and things I've learned."
-author: "[NAME]"
+author: "Un Français à Bruxelles"
 avatar: /assets/me.jpg
 
 # For a user site ([pseudo].github.io) keep baseurl empty.
