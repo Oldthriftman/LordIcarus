@@ -29,3 +29,8 @@ bundle exec jekyll serve   # http://localhost:4000
 Settings → Pages → Source: *Deploy from a branch*, branch `main`, folder `/ (root)`.
 For a user site the repo must be named `<username>.github.io` and `baseurl` stays empty;
 for any other repo name set `baseurl: "/<repo>"` in `_config.yml`.
+
+## Edit in the browser (Pages CMS)
+Log in at https://app.pagescms.org with GitHub and open this repo (config: `.pages.yml`).
+Uploaded images go to `assets/posts/`. If the repo is renamed to `Oldthriftman.github.io`,
+set `baseurl: ""` in `_config.yml` and `media.output: /assets/posts` in `.pages.yml`.

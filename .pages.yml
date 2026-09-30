@@ -1,0 +1,36 @@
+# Pages CMS (https://app.pagescms.org) — visual editor for the blog.
+media:
+  input: assets/posts
+  # Must include the site's baseurl so images inside articles resolve.
+  # If the repo is ever renamed to Oldthriftman.github.io, change this to /assets/posts
+  output: /UnFrancaisaBruxelle.github.io/assets/posts
+
+content:
+  - name: posts
+    label: Articles
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: description
+        label: Summary (shown on the home page; optional)
+        type: string
+      - name: image
+        label: Cover photo (optional)
+        type: image
+      - name: body
+        label: Article
+        type: rich-text

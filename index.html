@@ -11,7 +11,9 @@ layout: default
     <li class="card">
       <a class="card-link" href="{{ post.url | relative_url }}">
         {% if post.image %}
-        <img class="card-image" src="{{ post.image | relative_url }}" alt="" loading="lazy">
+        {% comment %}Pages CMS stores image paths with the baseurl already in them; strip it so relative_url doesn't add it twice.{% endcomment %}
+        {% assign cover = post.image | remove_first: site.baseurl %}
+        <img class="card-image" src="{{ cover | relative_url }}" alt="" loading="lazy">
         {% endif %}
         <time class="card-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
         <h3 class="card-title">{{ post.title }}</h3>

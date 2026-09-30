@@ -204,6 +204,7 @@ pre {
   color: var(--muted); font-size: .88rem;
 }
 .site-footer a { color: var(--muted); }
+.footer-links { display: flex; gap: 16px; }
 
 /* ---------- Syntax highlighting (Rouge) ---------- */
 .highlight .c, .highlight .c1, .highlight .cm, .highlight .cs { color: var(--muted); font-style: italic; }

@@ -11,7 +11,10 @@
   </main>
   <footer class="site-footer container">
     <span>&copy; {{ 'now' | date: '%Y' }} {{ site.author }}</span>
-    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    <span class="footer-links">
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="https://app.pagescms.org" rel="nofollow">Write</a>
+    </span>
   </footer>
 </body>
 </html>
