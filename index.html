@@ -2,19 +2,11 @@
 layout: default
 ---
 {% assign shown = site.posts | slice: 0, site.home_posts %}
-<section class="rail-section" aria-labelledby="latest-heading">
-  <div class="rail-head container">
-    <h2 id="latest-heading">Latest posts</h2>
-    {% if site.posts.size > 1 %}
-    <div class="rail-arrows">
-      <button class="rail-btn" type="button" data-dir="-1" aria-label="Previous posts" aria-controls="rail">‹</button>
-      <button class="rail-btn" type="button" data-dir="1" aria-label="Next posts" aria-controls="rail">›</button>
-    </div>
-    {% endif %}
-  </div>
+<section class="feed-section container" aria-labelledby="latest-heading">
+  <h2 class="feed-head" id="latest-heading">Latest posts</h2>
 
   {% if shown.size > 0 %}
-  <ol class="rail" id="rail" tabindex="0" aria-label="Posts, scroll horizontally">
+  <ol class="feed">
     {% for post in shown %}
     <li class="card">
       <a class="card-link" href="{{ post.url | relative_url }}">
@@ -38,6 +30,6 @@ layout: default
     {% endif %}
   </ol>
   {% else %}
-  <p class="container empty">No posts yet. Add a Markdown file to <code>_posts/</code>.</p>
+  <p class="empty">No posts yet. Add a Markdown file to <code>_posts/</code>.</p>
   {% endif %}
 </section>

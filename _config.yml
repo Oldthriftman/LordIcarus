@@ -9,7 +9,7 @@ avatar: /assets/me.jpg
 url: "https://oldthriftman.github.io"
 baseurl: "/UnFrancaisaBruxelle.github.io"
 
-# How many posts the home rail shows before linking to the archives.
+# How many posts the home page shows before linking to the archives.
 home_posts: 12
 
 permalink: /:year/:month/:day/:title/
