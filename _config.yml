@@ -6,8 +6,8 @@ avatar: /assets/me.jpg
 
 # For a user site ([pseudo].github.io) keep baseurl empty.
 # For a project site (github.com/you/repo) set baseurl: "/repo".
-url: ""
-baseurl: ""
+url: "https://oldthriftman.github.io"
+baseurl: "/UnFrancaisaBruxelle.github.io"
 
 # How many posts the home rail shows before linking to the archives.
 home_posts: 12
