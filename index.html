@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{% assign shown = site.posts | slice: 0, site.home_posts %}
+<section class="rail-section" aria-labelledby="latest-heading">
+  <div class="rail-head container">
+    <h2 id="latest-heading">Latest posts</h2>
+    {% if site.posts.size > 1 %}
+    <div class="rail-arrows">
+      <button class="rail-btn" type="button" data-dir="-1" aria-label="Previous posts" aria-controls="rail">‹</button>
+      <button class="rail-btn" type="button" data-dir="1" aria-label="Next posts" aria-controls="rail">›</button>
+    </div>
+    {% endif %}
+  </div>
+
+  {% if shown.size > 0 %}
+  <ol class="rail" id="rail" tabindex="0" aria-label="Posts, scroll horizontally">
+    {% for post in shown %}
+    <li class="card">
+      <a class="card-link" href="{{ post.url | relative_url }}">
+        {% if post.image %}
+        <img class="card-image" src="{{ post.image | relative_url }}" alt="" loading="lazy">
+        {% endif %}
+        <time class="card-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <h3 class="card-title">{{ post.title }}</h3>
+        <p class="card-excerpt">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 }}</p>
+        <span class="card-more" aria-hidden="true">Read →</span>
+      </a>
+    </li>
+    {% endfor %}
+    {% if site.posts.size > shown.size %}
+    <li class="card card-all">
+      <a class="card-link" href="{{ '/archives/' | relative_url }}">
+        <h3 class="card-title">All {{ site.posts.size }} posts</h3>
+        <span class="card-more" aria-hidden="true">Archives →</span>
+      </a>
+    </li>
+    {% endif %}
+  </ol>
+  {% else %}
+  <p class="container empty">No posts yet. Add a Markdown file to <code>_posts/</code>.</p>
+  {% endif %}
+</section>

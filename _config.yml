@@ -1,0 +1,38 @@
+# Site identity — replace [NAME] with your blog name.
+title: "[NAME]"
+description: "Notes, essays and things I've learned."
+author: "[NAME]"
+avatar: /assets/me.jpg
+
+# For a user site ([pseudo].github.io) keep baseurl empty.
+# For a project site (github.com/you/repo) set baseurl: "/repo".
+url: ""
+baseurl: ""
+
+# How many posts the home rail shows before linking to the archives.
+home_posts: 12
+
+permalink: /:year/:month/:day/:title/
+timezone: UTC
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle
